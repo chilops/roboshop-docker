@@ -9,8 +9,5 @@ COPY package.json /opt/server/
 COPY server.js /opt/server/
 RUN npm install
 RUN echo Hello World
-USER root
-RUN apk add --no-cache shadow
 RUN adduser cart
-USER roboshop
 CMD ["node", "server.js"]
