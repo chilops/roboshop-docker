@@ -11,5 +11,6 @@ RUN npm install
 RUN echo Hello World
 USER root
 RUN apk add --no-cache shadow
-RUN adduser -m cart
+RUN adduser cart
+USER roboshop
 CMD ["node", "server.js"]
