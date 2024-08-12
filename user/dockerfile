@@ -9,5 +9,6 @@ COPY package.json /opt/server/
 COPY server.js /opt/server/
 RUN npm install
 RUN echo Hello World
-RUN adduser cart
+RUN apk add --no-cache shadow
+RUN adduser -m cart
 CMD ["node", "server.js"]
