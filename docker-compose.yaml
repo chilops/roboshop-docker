@@ -2,16 +2,16 @@ networks:
   default:
     external:
       name: roboshop
-volumes:
-  mongodb: #docker volume create mongodb
-  redis:
-  mysql:
-  rabbitmq:
+# volumes:
+  # mongodb: #docker volume create mongodb
+  # redis:
+  # mysql:
+  # rabbitmq:
 services:
   # docker run -d --name mongodb --network=roboshop mongodb:1
   mongodb:
     image: mongodb:v1
-    container_name: mongodb
+    # container_name: mongodb
     # volumes:
     # - source: mongodb
     #   target: /data/db
@@ -21,7 +21,7 @@ services:
 
   catalogue:
     image: catalogue:v1
-    container_name: catalogue
+    # container_name: catalogue
     # networks:
     # - roboshop
     depends_on:
@@ -29,7 +29,7 @@ services:
 
   web:
     image: web:v1
-    container_name: web
+    # container_name: web
     ports:
     - "80:80"
     depends_on:
